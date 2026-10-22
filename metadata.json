@@ -1,0 +1,6 @@
+{
+  "name": "ModaGestión - Sistema para Tienda de Ropa",
+  "description": "Sistema profesional e integral para la gestión comercial, inventario, ventas, compras, caja y clientes de tiendas de ropa.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

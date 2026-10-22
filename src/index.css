@@ -1,0 +1,104 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --canvas-bg: #FAF7F2;
+    --surface-card: #FFFFFF;
+    --surface-cream: #FDFBF8;
+    --border-subtle: #EFE7DE;
+    --border-warm: #E3D7CB;
+    
+    /* Warm palette tokens */
+    --rose-dust: #C87D83;
+    --rose-soft: #F9EFF0;
+    --rose-hover: #B56C72;
+    
+    --sage-primary: #4F725B;
+    --sage-soft: #ECF3EE;
+    --sage-border: #D1E1D5;
+    
+    --mocha-primary: #6E5342;
+    --mocha-soft: #F5EFEB;
+    
+    --lavender-soft: #F1EFF7;
+    --lavender-accent: #786591;
+    
+    --pearl-gray: #EDE8E2;
+    --text-primary: #2D241E;
+    --text-secondary: #6B5E55;
+    --text-muted: #96887E;
+  }
+
+  body {
+    background-color: var(--canvas-bg);
+    color: var(--text-primary);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Warm canvas micro-texture */
+.bg-subtle-grid {
+  background-color: #FAF7F2;
+  background-image: radial-gradient(rgba(110, 83, 66, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Soft delicate boutique cards */
+.soft-card {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(227, 215, 203, 0.7);
+  box-shadow: 0 1px 3px rgba(110, 83, 66, 0.02), 0 4px 16px rgba(110, 83, 66, 0.03);
+  border-radius: 1rem;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.soft-card:hover {
+  border-color: rgba(200, 125, 131, 0.3);
+  box-shadow: 0 4px 12px rgba(110, 83, 66, 0.04), 0 8px 24px rgba(110, 83, 66, 0.04);
+}
+
+/* Custom warm scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E3D7CB;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C87D83;
+}
+
+/* Print styling for receipts */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-receipt, #printable-receipt * {
+    visibility: visible;
+  }
+  #printable-receipt {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    border: none;
+  }
+}
